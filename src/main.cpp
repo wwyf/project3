@@ -1,6 +1,32 @@
 #include <iostream>
 #include <string>
 #include "polynomial.h"
+// 1. 输入多项式
+// 2. 多项式相加
+// 3. 多项式相减
+// 4. 多项式与常数的乘法运算
+// 5. 求多项式代入某点的值
+// 6. 显示所有储存多项式 降幂
+// 9. 帮助（查看功能列表）
+// 0. 退出系统
+// 1. 多项式与多项式相乘
+// 2. 判断两个多项式是否相等
+// 3. 对某个多项式求导
+
+// Polynomial Input(const std::string& t ){
+//     Polynomial result;
+//     try {
+//
+//
+//     }
+//     catch (){
+//
+//     }
+//     return result;
+// }
+
+
+
 int main(){
     std::cout << "-----------------------------------" << std::endl;
     std::cout << "1. 输入多项式" << std::endl;
@@ -21,7 +47,7 @@ int main(){
                 break;
             }
             case '2' :{
-            
+
                 break;
             }
             case '3' :{
