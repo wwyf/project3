@@ -17,6 +17,7 @@
 // }
 
 
+
 Polynomial::Polynomial(int maxPower):_maxPower(maxPower){
     for (int i = 0; i <= _maxPower; i++)
         _items.push_back(item(i, 0));
@@ -39,6 +40,9 @@ Polynomial::Polynomial(const std::vector<item> t):Polynomial(){
         _items[i.power].coefficient = i.coefficient;
     }
 }
+
+
+
 
 // overload operator
 // 次数大的加次数小的
@@ -122,7 +126,7 @@ Polynomial operator*(Polynomial::coefficient_t lhs, const Polynomial& rhs)
 }
 
 // 计算 多项式的值
-int Polynomial::evaluate(coefficient_t arg)
+double Polynomial::evaluate(coefficient_t arg)
 {
     double ans = 0;
     double xPower = 1;
@@ -162,7 +166,7 @@ std::string Polynomial::toString() const
 
 std::ostream &  operator<<(std::ostream& out, const Polynomial & rhs)
 {
-    out << rhs.toString() << std::endl; 
+    out << rhs.toString(); 
     return out;
 }
 #endif

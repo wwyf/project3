@@ -1,4 +1,7 @@
 #include "data.h"
+#include <sstream>
+#include <vector>
+
 
 // 可能有异常,重复添加
 void usePoly::addPolynomial(const std::string& name, const Polynomial & t)

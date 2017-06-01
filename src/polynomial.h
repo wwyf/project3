@@ -21,7 +21,7 @@ public:
 
     Polynomial(int maxPower = MAX_ITEM_NUM);
     Polynomial(const std::vector<item> t);
-
+    // explicit Polynomial(const std::string & poly);// 必须用合法的字符串才能初始化
 
 // overload operator
     Polynomial operator+(const Polynomial& rhs) const;
@@ -32,7 +32,7 @@ public:
     Polynomial operator*(coefficient_t rhs) const;
     friend Polynomial operator*(coefficient_t lhs, const Polynomial& rhs);
 
-    int evaluate(coefficient_t arg);
+    double evaluate(coefficient_t arg);
     std::string toString() const;
 
     friend std::ostream & operator<<(std::ostream& out, const Polynomial & rhs);

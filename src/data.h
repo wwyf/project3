@@ -6,7 +6,8 @@
 #include <map>
 class usePoly{
 public:
-    void addPolynomial(const std::string&, const Polynomial &);
+    void addPolynomial(const std::string& name, const std::string & poly);
+    void addPolynomial(const std::string& name, const Polynomial & poly);
     void deletePolynomial(const std::string&);
     Polynomial getPolynomial(const std::string&);
     void printAll();
