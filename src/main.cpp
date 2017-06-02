@@ -66,8 +66,8 @@ Polynomial Input(const std::string& information ){
 
 // 输出目标多项式,以便确认
 // 并确定是否需要保存
-void Output(const Polynomial& rhs){
-    cout << "Your polynomial is this." << endl;
+void Output(const Polynomial& rhs, const string& infomation){
+    cout << infomation << endl;
     cout << rhs << endl;
     cout << "Do you want to save this Polynomial?" << endl;
     cout << "enter 'y' to save" << endl;
@@ -115,19 +115,21 @@ int main(){
         switch(choice[0]){
             case '1' :{
                 Polynomial myPoly = Input("please write down your polynomial.\ne.g:(3,5)(2,4)(power, coefficient)\n");
-                Output(myPoly);
+                Output(myPoly,"");
                 break;
             }
             case '2' :{
                 Polynomial myPoly1 = Input("please write down your first polynomial.\n");
                 Polynomial myPoly2 = Input("please write down your second polynomial.\n");
-                Output(myPoly1 + myPoly2);
+                cout << "(" << myPoly1 << "+" << myPoly2 << ")"<< "=";
+                Output(myPoly1 + myPoly2,"");
                 break;
             }
             case '3' :{
                 Polynomial myPoly1 = Input("please write down your first polynomial.\n");
                 Polynomial myPoly2 = Input("please write down your second polynomial.\n");
-                Output(myPoly1 - myPoly2);
+                cout << "(" << myPoly1 << "-" << myPoly2 << ")"<< "=";
+                Output(myPoly1 - myPoly2,"");
                 break;
             }
             case '4' :{
@@ -135,7 +137,8 @@ int main(){
                 double times;
                 cout << "please write down the number" << endl;
                 cin >> times;
-                Output(myPoly1 * times);
+                cout << "(" << myPoly1 << ")" << "*" << times << "=";
+                Output(myPoly1 * times,"");
                 break;
             }
             case '5' :{
@@ -143,18 +146,22 @@ int main(){
                 double times;
                 cout << "please write down the number you want to put in" << endl;
                 cin >> times;
-                cout << "the result is " << myPoly.evaluate(times) << endl;
+                cout << "(" << myPoly << ")" << "*" << times << "=";
+                cout << myPoly.evaluate(times) << endl;
                 break;
             }
             case '6' :{
                 cout << "Your polynomials are lists below." << endl;
+                cout << "---------------------------------" << endl;
                 myPolynomial.printAll();
+                cout << "---------------------------------" << endl;
                 break;
             }
             case '7' :{
                 Polynomial myPoly1 = Input("please write down your first polynomial.\n");
                 Polynomial myPoly2 = Input("please write down your second polynomial.\n");
-                Output(myPoly1 * myPoly2);
+                cout << "(" << myPoly1 << ")"  << "*" << "(" << myPoly2 << ")"  << "=";
+                Output(myPoly1 * myPoly2,"");
                 break;
             }
             case '8' :{
@@ -170,8 +177,7 @@ int main(){
                 Polynomial myPoly1 = Input("please write down your first polynomial.\n");
                 cout << "Original polynomial:" << endl;
                 cout << myPoly1 << endl;
-                cout << "the derivative" << endl;
-                Output(myPoly1.derivative());
+                Output(myPoly1.derivative(),"the derivative");
                 break;
             }
             case 'h' :{
