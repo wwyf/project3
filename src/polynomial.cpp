@@ -17,14 +17,14 @@
 // }
 
 
-
+////构造函数，创建一个有一定容量的vector
 Polynomial::Polynomial(int maxPower):_maxPower(maxPower){
     for (int i = 0; i <= _maxPower; i++)
         _items.push_back(item(i, 0));
     _maxPower = 0;// 漏了这一句话,造成很大影响
 }
 
-
+// 构造函数，使用vector来初始化多项式
 Polynomial::Polynomial(const std::vector<item> t):Polynomial(){
     std::vector<item> t2 = t;
     std::sort(t2.begin(), t2.end());
