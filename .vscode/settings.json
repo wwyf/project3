@@ -43,6 +43,11 @@
         "xloctime": "cpp",
         "map": "cpp",
         "tuple": "cpp",
-        "xtree": "cpp"
+        "xtree": "cpp",
+        "iterator": "cpp",
+        "locale": "cpp",
+        "regex": "cpp",
+        "xlocbuf": "cpp",
+        "xlocmes": "cpp"
     }
 }

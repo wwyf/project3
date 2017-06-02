@@ -1,7 +1,8 @@
 #ifndef _POLYNOMIAL_H_
 #define _POLYNOMIAL_H_
 
-#define MAX_ITEM_NUM 50
+#define MAX_ITEM_NUM 50 
+//即该程序能够处理(多项式的最大次数+1),可通过修改该数字来实现更大次数的多项式的计算
 
 #include <string>
 #include <vector>
@@ -10,37 +11,43 @@
 class Polynomial{
 
 public:
-    typedef double coefficient_t;
-    typedef int power_t;
+    typedef double coefficient_t;//系数类型为double
+    typedef int power_t;//指数类型为int
     struct item{
         power_t power;//每一项的次数
         coefficient_t coefficient;//系数
         item(power_t arg, coefficient_t arg2):power(arg),coefficient(arg2) {}
-        bool operator<(const item& rhs){return this->power < rhs.power;}
-    };//每一项
+        bool operator<(const item& rhs) const{return this->power < rhs.power;}
+        bool operator!=(const item& rhs) const{return ((power != rhs.power)||(coefficient != rhs.coefficient));};
+    };// 每一项
 
     Polynomial(int maxPower = MAX_ITEM_NUM);
+    // 生成（maxPower+1）项的多项式，并且初始化指数为对应数字，系数为0
+
     Polynomial(const std::vector<item> t);
+    // 使用vector来初始化多项式的系数
+    // 注意此vector的内容需合法
+
     // explicit Polynomial(const std::string & poly);// 必须用合法的字符串才能初始化
 
 // overload operator
-    Polynomial operator+(const Polynomial& rhs) const;
-    Polynomial operator-(const Polynomial& rhs) const;
-    Polynomial operator*(const item& rhs) const;
-    Polynomial operator*(const Polynomial& rhs) const;
+    Polynomial operator+(const Polynomial& rhs) const;//多项式相加
+    Polynomial operator-(const Polynomial& rhs) const;//多项式相减
+    Polynomial operator*(const item& rhs) const;//多项式乘某一项
+    Polynomial operator*(const Polynomial& rhs) const;//多项式乘多项式
+    Polynomial operator*(coefficient_t rhs) const;//多项式的数乘
+    friend Polynomial operator*(coefficient_t lhs, const Polynomial& rhs);//多项式的数乘
+    bool operator==(const Polynomial& rhs) const;
+    double evaluate(coefficient_t arg) const;// 多项式求值
+    Polynomial derivative() const;
 
-    Polynomial operator*(coefficient_t rhs) const;
-    friend Polynomial operator*(coefficient_t lhs, const Polynomial& rhs);
-
-    double evaluate(coefficient_t arg);
-    std::string toString() const;
-
-    friend std::ostream & operator<<(std::ostream& out, const Polynomial & rhs);
+// I/O
+    std::string toString() const;//多项式转变成字符串类型输出
+    friend std::ostream & operator<<(std::ostream& out, const Polynomial & rhs);//使用cout输出
 
 private:
-    // std::string _identity;// 多项式的标识符，便于使用存储的多项式
     power_t _maxPower; // 最大次数, +1 即为数组存放的项数
-    std::vector <item> _items;// 存放每一项的数组
+    std::vector <item> _items;// 存放每一项的数组，该数组默认最大项数为MAX_ITEM_NUM 为50
 };
 
 

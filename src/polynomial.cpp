@@ -125,8 +125,28 @@ Polynomial operator*(Polynomial::coefficient_t lhs, const Polynomial& rhs)
     return rhs * lhs;
 }
 
+// 判断多项式是否相等
+bool Polynomial::operator==(const Polynomial& rhs) const
+{
+    int flag = 1;
+    if (_maxPower != rhs._maxPower){
+        flag = 0;
+        return false;
+    }
+    for (int i = 0; i <= _maxPower; i++){
+        if (this->_items[i] != rhs._items[i]){
+            flag = 0;
+            break;
+        }
+    }
+    return flag;
+}
+
+
+
+
 // 计算 多项式的值
-double Polynomial::evaluate(coefficient_t arg)
+double Polynomial::evaluate(coefficient_t arg) const
 {
     double ans = 0;
     double xPower = 1;
@@ -137,18 +157,33 @@ double Polynomial::evaluate(coefficient_t arg)
     return ans;
 }
 
+Polynomial Polynomial::derivative() const
+{
+    std::vector<item> ans;
+    for (auto i : this->_items){
+        if (i.power == 0){
+            ans.push_back(item(0,0));
+        }
+        else if (i.coefficient != 0){
+            ans.push_back(item(i.power-1, i.coefficient * i.power));
+        }
+    }
+    return Polynomial(ans);
+}
+
+
 // 格式化输出
-// TODO: 系数或者次数为1的时候都需要进一步调整
+// FIXME: 系数或者次数为1的时候都需要进一步调整
 std::string Polynomial::toString() const
 {
     std::stringstream formatOut;
     for (int i = _maxPower; i >= 0; i--){
         if (i == _maxPower){
-            if (i != 0){
-                formatOut   << _items[i].coefficient << "x^" << _items[i].power;
-            }
-            else {
+            if (i == 0){
                 formatOut  << _items[i].coefficient;
+            }
+            else{
+                formatOut   << _items[i].coefficient << "x^" << _items[i].power;
             }
         }
         else if (i == 0 && _items[i].coefficient != 0){

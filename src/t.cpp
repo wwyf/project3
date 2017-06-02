@@ -6,32 +6,32 @@
 #include "polynomial.h"
 using namespace std;
 
-Polynomial str2poly(const std::string & poly)
-{
-    std::stringstream strPoly;
-    strPoly << poly; 
-    char leftParenthese,rightParenthese,comma;
-    int power;
-    double coefficient;
-    std::vector<Polynomial::item> myPoly;
-    while (strPoly.good()){
-        strPoly >> leftParenthese >> power >> comma >> coefficient >> rightParenthese;
-        myPoly.push_back(Polynomial::item(power, coefficient));
-    }
-    return Polynomial(myPoly);
-}
+// Polynomial str2poly(const std::string & poly)
+// {
+//     std::stringstream strPoly;
+//     strPoly << poly; 
+//     char leftParenthese,rightParenthese,comma;
+//     int power;
+//     double coefficient;
+//     std::vector<Polynomial::item> myPoly;
+//     while (strPoly.good()){
+//         strPoly >> leftParenthese >> power >> comma >> coefficient >> rightParenthese;
+//         myPoly.push_back(Polynomial::item(power, coefficient));
+//     }
+//     return Polynomial(myPoly);
+// }
 
 
 int main(){
-    cout << str2poly("(1,2)(2,5)(0,5)") << endl;;
-    // Polynomial::item item1(0,2);
-    // std::vector<Polynomial::item> t;
-    // t.push_back(Polynomial::item(0,1));
-    // t.push_back(Polynomial::item(1,1));
-    // t.push_back(Polynomial::item(6,1));
+    // cout << str2poly("(1,2)(2,5)(0,5)") << endl;;
+    // Polynomial::item item1(0,0);
+    std::vector<Polynomial::item> t;
+    t.push_back(Polynomial::item(0,0));
+    t.push_back(Polynomial::item(1,0));
+    t.push_back(Polynomial::item(6,0));
     // t.push_back(Polynomial::item(3,0));
-    // Polynomial a(t);
-    // cout << a.toString() << endl;
+    Polynomial a(t);
+    cout << a.toString() << endl;
 
 
     // std::vector<Polynomial::item> t2;
