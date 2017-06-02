@@ -94,19 +94,19 @@ void Output(const Polynomial& rhs, const string& infomation){
 }
 
 int main(){
-
+    std::cout << "the calculator for my dear brother." << endl;
     std::cout << "-----------------------------------" << std::endl;
-    std::cout << "1. 输入多项式" << std::endl;
-    std::cout << "2. 多项式相加" << std::endl;
-    std::cout << "3. 多项式相减" << std::endl;
-    std::cout << "4. 多项式与常数的乘法运算" << std::endl;
-    std::cout << "5. 求多项式代入某点的值" << std::endl;
-    std::cout << "6. 显示所有储存多项式" << std::endl;
-    std::cout << "7. 多项式与多项式相乘" << std::endl;
-    std::cout << "8. 判断两个多项式是否相等" << std::endl;
-    std::cout << "9. 对某个多项式求导" << std::endl;
-    std::cout << "h. 帮助(查看功能列表)" << std::endl;
-    std::cout << "q. 退出系统" << std::endl;
+    std::cout << "1. put in your polynomial" << std::endl;
+    std::cout << "2. add" << std::endl;
+    std::cout << "3. subtract" << std::endl;
+    std::cout << "4. polynomoial multiplied by one number." << std::endl;
+    std::cout << "5. put a number into the polynomial." << std::endl;
+    std::cout << "6. print all stored polynomial." << std::endl;
+    std::cout << "7. polynomial multiplied by another polynomial." << std::endl;
+    std::cout << "8. compare two polynomials" << std::endl;
+    std::cout << "9. show the derivate of your polynomial." << std::endl;
+    std::cout << "h. help" << std::endl;
+    std::cout << "q. quit this system." << std::endl;
     std::cout << "-----------------------------------" << std::endl;
 
     std::string choice;
@@ -182,17 +182,17 @@ int main(){
             }
             case 'h' :{
                 std::cout << "-----------------------------------" << std::endl;
-                std::cout << "1. 输入多项式" << std::endl;
-                std::cout << "2. 多项式相加" << std::endl;
-                std::cout << "3. 多项式相减" << std::endl;
-                std::cout << "4. 多项式与常数的乘法运算" << std::endl;
-                std::cout << "5. 求多项式代入某点的值" << std::endl;
-                std::cout << "6. 显示所有储存多项式" << std::endl;
-                std::cout << "7. 多项式与多项式相乘" << std::endl;
-                std::cout << "8. 判断两个多项式是否相等" << std::endl;
-                std::cout << "9. 对某个多项式求导" << std::endl;
-                std::cout << "h. 帮助(查看功能列表)" << std::endl;
-                std::cout << "q. 退出系统" << std::endl;
+                std::cout << "1. put in your polynomial" << std::endl;
+                std::cout << "2. add" << std::endl;
+                std::cout << "3. subtract" << std::endl;
+                std::cout << "4. polynomoial multiplied by one number." << std::endl;
+                std::cout << "5. put a number into the polynomial." << std::endl;
+                std::cout << "6. print all stored polynomial." << std::endl;
+                std::cout << "7. polynomial multiplied by another polynomial." << std::endl;
+                std::cout << "8. compare two polynomials" << std::endl;
+                std::cout << "9. show the derivate of your polynomial." << std::endl;
+                std::cout << "h. help" << std::endl;
+                std::cout << "q. quit this system." << std::endl;
                 std::cout << "-----------------------------------" << std::endl;
             }
             default:{
@@ -204,4 +204,13 @@ int main(){
     }
     cout << "You have quited this system successfully." << std::endl;
     return 0;
+}
+
+
+case '2' :{
+    Polynomial myPoly1 = Input("please write down your first polynomial.\n");
+    Polynomial myPoly2 = Input("please write down your second polynomial.\n");
+    cout << "(" << myPoly1 << ")" << "+" << "(" << myPoly2 << ")"<< "=";
+    Output(myPoly1 + myPoly2,"");
+    break;
 }

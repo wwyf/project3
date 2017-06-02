@@ -55,19 +55,3 @@ private:
 
 
 #endif
-
-
-
-// // 数据成员如下
-// power_t _maxPower; // 最大次数, +1 即为数组存放的项数
-// std::vector <item> _items;// 存放每一项的数组，该数组默认最大项数为MAX_ITEM_NUM 为50
-// // 其中
-// typedef double coefficient_t;//系数类型为double
-// typedef int power_t;//指数类型为int
-// struct item{
-//     power_t power;//每一项的次数
-//     coefficient_t coefficient;//系数
-//     item(power_t arg, coefficient_t arg2):power(arg),coefficient(arg2) {}
-//     bool operator<(const item& rhs) const;
-//     bool operator!=(const item& rhs) const;
-// };// 每一项

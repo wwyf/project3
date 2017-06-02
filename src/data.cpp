@@ -2,7 +2,7 @@
 #include <sstream>
 #include <vector>
 
-bool usePoly::findPolynomial(const std::string& name) const
+bool usePoly::findPolynomial(const std::string& name) const 
 {
     auto find_result = this->data.find(name);
     if (find_result == data.end())

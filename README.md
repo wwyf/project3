@@ -16,9 +16,7 @@
     9. 对某个多项式求导
     h. 帮助（查看功能列表）
     q. 退出系统
-3. 文件说明
 
-
-4. 使用演示
+3. 使用演示
 
 http://asciinema.org/a/e8jpf2g4cwtmpajgnotd2q6n9
