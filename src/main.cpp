@@ -121,14 +121,14 @@ int main(){
             case '2' :{
                 Polynomial myPoly1 = Input("please write down your first polynomial.\n");
                 Polynomial myPoly2 = Input("please write down your second polynomial.\n");
-                cout << "(" << myPoly1 << "+" << myPoly2 << ")"<< "=";
+                cout << "(" << myPoly1 << ")" << "+" << "(" << myPoly2 << ")"<< "=";
                 Output(myPoly1 + myPoly2,"");
                 break;
             }
             case '3' :{
                 Polynomial myPoly1 = Input("please write down your first polynomial.\n");
                 Polynomial myPoly2 = Input("please write down your second polynomial.\n");
-                cout << "(" << myPoly1 << "-" << myPoly2 << ")"<< "=";
+                cout << "(" << myPoly1 << ")" << "-" << "(" << myPoly2 << ")"<< "=";
                 Output(myPoly1 - myPoly2,"");
                 break;
             }
