@@ -146,7 +146,7 @@ int main(){
                 double times;
                 cout << "please write down the number you want to put in" << endl;
                 cin >> times;
-                cout << "(" << myPoly << ")" << "*" << times << "=";
+                cout << "(" << myPoly << ")" << "(" << times << ")" << "=";
                 cout << myPoly.evaluate(times) << endl;
                 break;
             }
