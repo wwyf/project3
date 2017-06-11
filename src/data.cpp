@@ -37,6 +37,29 @@ Polynomial usePoly::getPolynomial(const std::string& t)
     // }
 }
 
+Polynomial usePoly::plus(const std::string& lhs, const std::string& rhs){
+    
+}
+Polynomial usePoly::subtract(const std::string& lhs, const std::string& rhs){
+
+}
+Polynomial usePoly::multiply_by_number(const std::string& lhs, const std::string& rhs){
+
+}
+Polynomial usePoly::evaluation(const std::string& lhs, const std::string& rhs){
+
+}
+Polynomial usePoly::multiply(const std::string& lhs, const std::string& rhs){
+
+}
+Polynomial usePoly::compare(const std::string& lhs, const std::string& rhs){
+
+}
+Polynomial usePoly::derivate(const std::string& lhs, const std::string& rhs){
+
+}
+
+
 void usePoly::printAll()
 {
     for (auto a : data){

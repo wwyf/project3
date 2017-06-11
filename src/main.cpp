@@ -63,6 +63,28 @@ Polynomial Input(const std::string& information ){
         return myPolynomial.getPolynomial(myInput);
     }
 }
+// Polynomial Input(const std::string& information ){
+//     string myInput;
+//     cout << information;
+//     cin >> myInput;
+//     if (myInput[0] == '('){
+//         while (!check(myInput)){
+//             cout << "invalid input!" << endl;
+//             cout << "please input again" << endl;
+//             cin >> myInput;
+//         }
+//         return str2poly(myInput);
+//     }
+//     else {
+//         while(!myPolynomial.findPolynomial(myInput))
+//         {
+//             cout << "this polynomial do not exist!!" << endl;
+//             cout << "please input the name again" << endl;
+//             cin >> myInput;
+//         }
+//         return myPolynomial.getPolynomial(myInput);
+//     }
+// }
 
 // 输出目标多项式,以便确认
 // 并确定是否需要保存
